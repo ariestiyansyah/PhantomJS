@@ -32,7 +32,7 @@ function screenshots(page){
 	casper.viewport(1500,900);
 }
 
-function to_homepage(){
+function to_homepage() {
 	// Go to homepage
 	casper.thenClick('.logo', function() {
 	    this.test.info('Status ' + this.getCurrentUrl());
@@ -41,7 +41,7 @@ function to_homepage(){
 	});
 }
 
-function register_page(){
+function register_page() {
     casper.thenOpen(BASE_URL+'/register', function() {
         this.test.info('Status ' + this.getCurrentUrl());
         this.test.assertHttpStatus(200);
@@ -49,7 +49,7 @@ function register_page(){
     });
 }
 
-function login_page(){
+function login_page() {
     casper.thenOpen(BASE_URL+'/login', function() {
         this.test.info('Status ' + this.getCurrentUrl());
         this.test.assertHttpStatus(200);
@@ -57,7 +57,7 @@ function login_page(){
 	});
 }
 
-function karir_page(){
+function karir_page() {
     // Go to Career page
     casper.thenOpen(BASE_URL+'/jobs', function() {
         this.test.info('Status ' + this.getCurrentUrl());
@@ -66,12 +66,60 @@ function karir_page(){
     });
 }
 
-function kabar_page(){
+function kabar_page() {
     //
     casper.thenOpen(BASE_URL+'/news', function() {
         this.test.info('Status ' + this.getCurrentUrl());
         this.test.assertHttpStatus(200);
         // screenshots("kabar-terbaru-page")
+    });
+}
+
+function about_page() {
+    casper.thenOpen(BASE_URL+'/about', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("about-page")
+    });
+}
+
+function tos_page() {
+    casper.thenOpen(BASE_URL+'/tos', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("tos-page")
+    });
+}
+
+function faq_page() {
+    casper.thenOpen(BASE_URL+'/faq', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("faq-page")
+    });
+}
+
+function privacy_page() {
+    casper.thenOpen(BASE_URL+'/privacy', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("privacy-page")
+    });
+}
+
+function akses_page() {
+    casper.thenOpen(BASE_URL+'/akses', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("akses-page")
+    });
+}
+
+function honor_page() {
+    casper.thenOpen(BASE_URL+'/', function() {
+        this.test.info('Status ' + this.getCurrentUrl());
+        this.test.assertHttpStatus(200);
+        // screenshots("honor-page")
     });
 }
 
@@ -86,6 +134,12 @@ casper.start().viewport(800,900).thenOpen(BASE_URL, function() {
     login_page();
     karir_page();
     kabar_page();
+    about_page();
+    tos_page();
+    faq_page();
+    privacy_page();
+    akses_page();
+    honor_page();
 
 });
 
