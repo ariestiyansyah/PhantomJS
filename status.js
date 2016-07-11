@@ -6,5 +6,6 @@ page.open('https://indonesiax.co.id', function (status) {
         else {
             console.log('IndonesiaX is up');
         }
+        page.render('homepage.png');
         phantom.exit();
 });
